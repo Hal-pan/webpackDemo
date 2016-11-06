@@ -2,26 +2,26 @@
  * Created by huangpan on 2016/11/5.
  */
 
-import webpack from "webpack";
-import path from "path";
+var webpack = require("webpack");
+var path = require("path");
 
-export default {
+module.exports = {
   entry: [`${__dirname}/src/index.js`],
   output: {
       path:path.resolve(__dirname, "bundle"),
-      publicPath:"/js/"
+      publicPath:"/js/",
       filename: "bundle.js"
    },
   module: {
   loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
-      },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /(node_modules|bower_components)/,
+      //   loader: 'babel'
+      // },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "postcss", "sass"]
+        loaders: ["style", "css?sourceMap", "postcss", "sass?sourceMap"]
       }
     ]
   },
