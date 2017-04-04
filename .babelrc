@@ -1,4 +1,28 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
-  /*"Plugins":["react-hot-loader/babel"]*/
+  "presets": [
+    ["env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "safari >= 7"
+          ]
+        },
+        "modules":false
+      }
+    ],
+    "react",
+    "stage-0"
+  ],
+  "plugins":[
+    "react-hot-loader/babel",
+    "transform-decorators-legacy",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true
+      }
+    ]
+  ]
 }
